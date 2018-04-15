@@ -1,0 +1,29 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-view {
+  h1.main-title {
+    @include font-1;
+    margin: 2em 0 1.5em 0;
+    font-size: 2.2em;
+    text-align: center;
+  }
+  h1.main-title-s-margins {
+    @include font-1;
+    margin: 0;
+    font-size: 2.2em;
+  }
+  h2.main-title {
+    @include font-1;
+    font-size: 1.8em;
+    text-align: center;
+  }
+}
+.sub-title {
+  @include font-2-bold;
+}
+code {
+  white-space: pre-wrap;
+}

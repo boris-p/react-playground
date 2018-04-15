@@ -1,0 +1,28 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# testing
+coverage
+
+#previous builds
+build
+
+# dist folder
+# exclude everything
+dist/*
+
+# exception to the rule so we'll update a folder which is not empty to git
+!dist/temp.html
+
+# misc
+.DS_Store
+Thumbs.db
+.env
+.idea
+npm-debug.log
+compilation-stats.json
+
+#extensions
+.vscode

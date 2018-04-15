@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": "> 5%"
+        },
+        "presets": ["react"]
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": ["react"]
+    }
+  }
+}

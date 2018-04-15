@@ -1,0 +1,142 @@
+/*
+------------------------------------------------------------
+-----------------------datreeio fonts----------------------
+------------------------------------------------------------
+*/
+/* russo-one-regular - latin */
+@font-face {
+  font-family: 'Russo One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/russo/russo-one-v6-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Russo One'), local('RussoOne-Regular'),
+    url('../fonts/russo/russo-one-v6-latin-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/russo/russo-one-v6-latin-regular.woff2') format('woff2'),
+    url('../fonts/russo/russo-one-v6-latin-regular.woff') format('woff'),
+    url('../fonts/russo/russo-one-v6-latin-regular.ttf') format('truetype'),
+    url('../fonts/russo/russo-one-v6-latin-regular.svg#RussoOne') format('svg'); /* Legacy iOS */
+}
+
+@mixin font-1() {
+  font-family: 'Russo One';
+}
+@mixin font-2() {
+  font-family: 'Lato', sans-serif;
+}
+@mixin font-2-light() {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+@mixin font-2-bold() {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+}
+
+// font sizes
+@for $i from 5 through 20 {
+  $widthText: $i * 10;
+  .fs-#{$widthText} {
+    font-size: percentage($widthText/100);
+  }
+}
+
+/*
+------------------------------------------------------------
+-----------------------datreeio colors----------------------
+------------------------------------------------------------
+*/
+
+$theme-link: #6b91ca;
+$theme-link-hover: #5192ee;
+
+$theme-white: white;
+$theme-black: black;
+
+$theme-light-blue: #05cde5;
+$theme-blue: #05cde5;
+$theme-dark-blue: #221e2b;
+
+$theme-red: #cc5019;
+$theme-yellow: #e6d01a;
+
+$theme-green: #27c3af;
+$theme-purple: #5b3952;
+
+$theme-pink: #aa2a66;
+$theme-pink-hover: #c63278;
+$theme-pink-active: #902456;
+
+$gray-1: #f8f9fa;
+$gray-2: rgb(212, 211, 211);
+$gray-4: rgb(182, 181, 181);
+$gray-6: rgb(82, 82, 82);
+$gray-8: rgb(34, 34, 34);
+
+$colors-list: (
+  theme-link: (normal: $theme-link, hover: $theme-link-hover, active: $theme-link, selected: $theme-link),
+  theme-white: (normal: $theme-white),
+  theme-black: (normal: $theme-black),
+  theme-light-blue:
+    (normal: $theme-light-blue, hover: rgb(134, 134, 243), active: $theme-light-blue, selected: $theme-light-blue),
+  theme-blue: (normal: $theme-blue),
+  theme-dark-blue: (normal: $theme-dark-blue),
+  theme-red: (normal: $theme-red),
+  theme-yellow: (normal: $theme-yellow),
+  theme-green: (normal: $theme-green),
+  theme-purple: (normal: $theme-purple),
+  theme-pink: (normal: $theme-pink, hover: $theme-pink-hover, active: $theme-pink-active, selected: $theme-light-blue),
+  gray-1: (normal: $gray-1),
+  gray-2: (normal: $gray-2),
+  gray-4: (normal: $gray-4),
+  gray-6: (normal: $gray-6),
+  gray-8: (normal: $gray-8)
+);
+
+@function getColor($selectedColor, $key, $color-name) {
+  @if not map-has-key($selectedColor, $key) {
+    //@warn '`#{$key}` state not found. in `#{$color-name}` color';
+    @return map-get($selectedColor, normal);
+  }
+  @return map-get($selectedColor, $key);
+}
+
+@each $color-name, $color-val in $colors-list {
+  $selectedColor: map-get($colors-list, $color-name);
+  .#{$color-name} {
+    color: map-get($selectedColor, normal);
+    &.responsive:hover {
+      color: getColor($selectedColor, hover, $color-name);
+    }
+    &.responsive:active {
+      color: getColor($selectedColor, active, $color-name);
+    }
+    &.responsive.selected {
+      color: getColor($selectedColor, selected, $color-name);
+    }
+  }
+  .bg-#{$color-name} {
+    background-color: map-get($selectedColor, normal);
+    &.responsive:hover {
+      background-color: getColor($selectedColor, hover, $color-name);
+    }
+    &.responsive:active {
+      background-color: getColor($selectedColor, active, $color-name);
+    }
+    &.responsive.selected {
+      background-color: getColor($selectedColor, selected, $color-name);
+    }
+  }
+}
+
+/*
+------------------------------------------------------------
+-----------------------------setup--------------------------
+------------------------------------------------------------
+*/
+// transition speeds
+$layout-transition-speed: 0.25s !default;
+$layout-transition-speed-medium: 0.5s !default;
+$layout-transition-speed-slow: 1s !default;
+
+// more setup
+$border-color: $gray-2 !default;

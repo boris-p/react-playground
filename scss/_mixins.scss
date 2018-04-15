@@ -1,0 +1,5 @@
+// we import these things to have access to bootstrap's variables and mixins within our own to compose
+// new ones
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
+@import '~bootstrap/scss/_mixins.scss';

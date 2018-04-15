@@ -1,0 +1,35 @@
+.main-content {
+  min-height: 30rem;
+}
+.history-item {
+  background-color: #ececec;
+  border: 1px solid #a0a0a0;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+.input-array {
+  span {
+    background-color: #ff74cc;
+    border: 1px solid #980000;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+}
+.sorted-array {
+  span {
+    background-color: #77c3fc;
+    border: 1px solid #173a85;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+}
+.single-item {
+  position: absolute;
+  background-color: #77c3fc;
+  border: 1px solid #173a85;
+  font-size: 1.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 2rem;
+  text-align: center;
+}
