@@ -47,8 +47,8 @@ class CompoundComp extends React.Component {
           <code>{'React.Children.map'}</code>, Mapping all of the children and extending their functionality.
           <br />
           We also use
-          <code>{'React.cloneElement'}</code> on the children as we cannot change the actual children (they are recieved
-          from the props)
+          <code>{'React.cloneElement'}</code> on the children. We cannot change the actual children as they are recieved
+          from the props
         </div>
       </div>
     )
