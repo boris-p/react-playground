@@ -21,11 +21,6 @@ class Header extends React.Component {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to={'/merge-sort-v2'} className='nav-link'>
-                  merge sort v2
-                </Link>
-              </li>
-              <li className='nav-item'>
                 <Link to={'/adv-components'} className='nav-link'>
                   advanced component patterns
                 </Link>

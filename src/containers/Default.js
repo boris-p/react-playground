@@ -8,8 +8,7 @@ import Footer from 'Components/common/Footer'
 
 import HPage from 'Components/homePage/HPage'
 import { View1 } from 'Components/view1/view1'
-import MergeSort from 'Components/mergeSort/MergeSort'
-import MergeSortV2 from 'Components/mergeSort/MergeSortV2'
+import MergeSortRouter from 'Components/mergeSort/MergeSortRouter'
 
 import AdvCompPatternsRouter from 'Components/advCompPatterns/AdvCompPatternsRouter'
 
@@ -29,8 +28,7 @@ class Default extends React.Component {
                     <Switch>
                       <Route path='/' exact name='home page' component={HPage} />
                       <Route path='/View1' name='catalog' component={View1} />
-                      <Route path='/merge-sort' name='Merge Sort' component={MergeSort} />
-                      <Route path='/merge-sort-v2' name='Merge Sort v2' component={MergeSortV2} />
+                      <Route path='/merge-sort' name='Merge Sort' component={MergeSortRouter} />
                       <Route
                         path='/adv-components'
                         name='advanced component patterns'
