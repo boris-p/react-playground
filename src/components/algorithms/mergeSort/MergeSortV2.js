@@ -37,7 +37,7 @@ class MergeSortV2 extends React.Component {
     let a = inputArr.slice(0, halfPoint)
     let b = inputArr.slice(halfPoint)
 
-    // recursively split, aort and merge the split array unless we reach a
+    // recursively split, sort and merge the split array unless we reach a
     // base case where we just have 1 item in the array
     let aSorted = a.length > 1 ? this.mergeSort(a) : a
     let bSorted = b.length > 1 ? this.mergeSort(b) : b

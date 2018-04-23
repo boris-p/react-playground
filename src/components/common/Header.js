@@ -16,8 +16,8 @@ class Header extends React.Component {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to={'/merge-sort'} className='nav-link'>
-                  merge sort
+                <Link to={'/algorithms'} className='nav-link'>
+                  algorithms
                 </Link>
               </li>
               <li className='nav-item'>

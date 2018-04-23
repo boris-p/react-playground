@@ -26,7 +26,6 @@ class MergeSort extends React.Component {
     this.setState({ sortedArray: sortedArr, hasSorted: true })
   }
   mergeSort = inputArr => {
-    console.log('merging', inputArr)
     // this works for both even and odd length arrays
     // split the array
     const halfPoint = Math.max(inputArr.length / 2)
@@ -62,7 +61,6 @@ class MergeSort extends React.Component {
         i++
       }
     }
-    console.log('merged and sorted array is: ', outputArr)
     return outputArr
   }
 
