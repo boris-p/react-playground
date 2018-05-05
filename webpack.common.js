@@ -75,19 +75,6 @@ module.exports = {
               },
               {
                 loader: 'sass-loader?sourceMap'
-              },
-              {
-                loader: 'sass-resources-loader',
-                options: {
-                  // Or array of paths
-                  resources: [
-                    './scss/_variables.scss',
-                    './scss/_mixins.scss',
-                    './node_modules/bootstrap/scss/mixins/*.scss',
-                    './node_modules/bootstrap/scss/_functions.scss',
-                    './node_modules/bootstrap/scss/_variables.scss'
-                  ]
-                }
               }
             ]
           })

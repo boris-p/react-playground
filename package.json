@@ -100,13 +100,11 @@
       "Public(.*)$": "<rootDir>/$1",
       "Components(.*)$": "<rootDir>/src/components/$1",
       "^Actions(.*)$": "<rootDir>/src/actions/$1",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/src/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
     },
-    "testPathIgnorePatterns": [
-      "<rootDir>/src/config/test.js",
-      "<rootDir>/node_modules/"
-    ]
+    "testPathIgnorePatterns": ["<rootDir>/src/config/test.js", "<rootDir>/node_modules/"]
   },
   "prettier": {
     "semi": false,
