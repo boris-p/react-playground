@@ -8,7 +8,7 @@ https://visualgo.net/en/tsp
 https://github.com/skidding/illustrated-algorithms/tree/master/components
 
 */
-class MergeSortV2 extends React.Component {
+class Def extends React.Component {
   constructor() {
     super()
 
@@ -153,4 +153,4 @@ class MergeSortV2 extends React.Component {
     )
   }
 }
-export default MergeSortV2
+export default Def

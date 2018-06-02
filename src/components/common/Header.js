@@ -25,6 +25,11 @@ class Header extends React.Component {
                   advanced component patterns
                 </Link>
               </li>
+              <li className='nav-item'>
+                <Link to={'/d3'} className='nav-link'>
+                  d3 playground
+                </Link>
+              </li>
             </ul>
           </div>
         </Container>

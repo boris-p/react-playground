@@ -8,7 +8,7 @@ https://visualgo.net/en/tsp
 https://github.com/skidding/illustrated-algorithms/tree/master/components
 
 */
-class MergeSortV2 extends React.Component {
+class exp1 extends React.Component {
   constructor() {
     super()
 
@@ -16,10 +16,10 @@ class MergeSortV2 extends React.Component {
     this.state = {}
     this.radius = 2.5
     this.sizes = {
-      height: 300,
-      width: 800,
-      paddingBottom: 50,
-      paddingLeft: 50
+      height: 600,
+      width: 1200,
+      paddingBottom: 20,
+      paddingLeft: 20
     }
 
     this.x = d3
@@ -38,12 +38,12 @@ class MergeSortV2 extends React.Component {
     this.goalPoint = null
 
     // initial set up of the plot
-    this.jsonCircles = [{ x: 1, y: 2 }, { x: 5, y: 3 }, { x: 6, y: 5 }, { x: 14, y: 8 }, { x: 9, y: 10 }]
-    // this.jsonCircles = [{ x: 1, y: 2 }]
+    // this.jsonCircles = [{ x: 1, y: 2 }, { x: 5, y: 3 }, { x: 6, y: 5 }, { x: 14, y: 8 }, { x: 9, y: 10 }]
+    this.jsonCircles = [{ x: 1, y: 2 }]
   }
   componentDidMount() {
     const that = this
-    this.plotArea = d3.select('.plot-area')
+    this.plotArea = d3.select('.plot-area-exp-1')
     this.plotArea
       .attr('transform', `translate(${this.sizes.paddingLeft},${this.sizes.paddingBottom})`)
 
@@ -62,12 +62,9 @@ class MergeSortV2 extends React.Component {
     }, 20)
   }
   click(point) {
-    console.log('point', point)
     this.jsonCircles.push({ x: this.x.invert(point[0]), y: this.y.invert(point[1]) })
-    console.log('json circles', this.jsonCircles)
   }
   componentDidUpdate() {
-    // this.plotData()
     return false
   }
   plotData = () => {
@@ -97,8 +94,8 @@ class MergeSortV2 extends React.Component {
       const distance = Math.sqrt(Math.pow(d.x - xGoal, 2) + Math.pow(d.y - yGoal, 2))
       // only move if distance is greater than some threshhold
       if (distance > moveBy) {
-        //const actuallyMoveBy = moveBy * Math.pow(distance, 2)
-        const actuallyMoveBy = moveBy * 3
+        const actuallyMoveBy = Math.abs(1 / distance)
+        // const actuallyMoveBy = moveBy * 3
         d.x = d.x > xGoal ? d.x - actuallyMoveBy : d.x + actuallyMoveBy
         d.y = d.y > yGoal ? d.y - actuallyMoveBy : d.y + actuallyMoveBy
       }
@@ -109,7 +106,7 @@ class MergeSortV2 extends React.Component {
     // this.circles.exit().remove()
 
     // update circle data
-    this.initAndUpdateCircles(this.jsonCircles)
+    this.initAndUpdateCircles(updatedData)
 
     this.plotArea
       .selectAll('circle')
@@ -134,18 +131,15 @@ class MergeSortV2 extends React.Component {
   render() {
     return (
       <div className="main-content">
-        <h4 className="sub-title mt-5">Merge sort in d3</h4>
-        <div>a different approach</div>
+        <h4 className="sub-title mt-5">experiment 1 - just a few things moving</h4>
         <div>
-          so my task here is to have a version of
-          <a href="https://bl.ocks.org/mbostock/39566aca95eb03ddd526"> this</a> working so I can start tweaking it
           <div className="bp-flex-svg-container bp-pb-40">
             <svg
-              viewBox={'0 0 ' + this.sizes.width + ' ' + this.sizes.height}
+              viewBox={`0 0 ${this.sizes.width} ${this.sizes.height}`}
               preserveAspectRatio="xMidYMid meet"
-              className={'bp-flex-svg-content ' + this.props.baseClass}
+              className={'bp-flex-svg-content '}
             >
-              <g className="plot-area" />
+              <g className="plot-area-exp-1" />
             </svg>
           </div>
         </div>
@@ -153,4 +147,4 @@ class MergeSortV2 extends React.Component {
     )
   }
 }
-export default MergeSortV2
+export default exp1
